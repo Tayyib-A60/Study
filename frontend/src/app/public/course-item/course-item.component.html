@@ -1,0 +1,24 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading">
+  <button class="btn btn-link" (click)="onGoBack()"><< Back</button>
+  <div class="single-thing-pane">
+    <img [src]="course?.imageUrl" alt="">
+    <div class="single-thing-info">
+      <h1>{{ course?.title }}</h1>
+      <h2 class="single-thing-price">{{ course?.description }}</h2>
+      <br>
+      <p style='background-color: aquamarine; padding: 10px; border-radius: 3px'>{{ course?.content }}</p>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <div class='videos'>
+      <div *ngFor='let url of safeUrls'>
+          <iframe width="420" height="345" [src]="url" frameborder="0" allowfullscreen>
+          </iframe>
+          <br>
+      </div>
+    </div>
+  </div>
+</div>
